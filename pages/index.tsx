@@ -6,6 +6,7 @@ import { name, tagline } from "../constants";
 const Hero = styled.div`
   h1 {
     font-size: 3rem;
+    color: ${(props) => props.theme.colors.primary};
   }
   img {
     width: 100%;

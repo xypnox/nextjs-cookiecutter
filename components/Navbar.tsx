@@ -7,7 +7,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 1rem 0.5rem 1rem;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid ${(props) => props.theme.colors.light};
 `;
 
 const A = styled.a`
@@ -15,7 +15,7 @@ const A = styled.a`
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    color: #553ddb;
+    color: ${(props) => props.theme.colors.primary};
   }
 `;
 

@@ -1,12 +1,19 @@
 import React from "react";
 import Head from "next/head";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { deploy_url, name, tagline } from "../constants";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { MetaData } from "../types";
 
 export const siteTitle = { name };
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text}
+  }
+`;
 
 const LayoutContainer = styled.div`
   max-width: 1200px;
@@ -15,9 +22,7 @@ const LayoutContainer = styled.div`
 
 const Main = styled.div`
   padding: 0 0.5rem;
-
   font-size: 20px;
-
   p {
     font-weight: 400;
   }
@@ -37,6 +42,7 @@ export default function Layout({ children, metadata }: LayoutProps) {
   };
   return (
     <LayoutContainer>
+      <GlobalStyle />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link
